@@ -1,4 +1,4 @@
-# Singly Linear Linked List
+# Singly Linear Linked List: insert node 
 
 class Node:
     def __init__(self,val):
