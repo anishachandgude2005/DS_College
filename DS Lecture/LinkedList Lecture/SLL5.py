@@ -27,11 +27,11 @@ class LinkedList:
                 prev=temp
                 temp=temp.next
 
-            if temp==None:
-                print("Value is not present")
-                return
-            prev.next=temp.next
-            temp=None
+        if temp==None:
+            print("Value is not present")
+            return
+        prev.next=temp.next
+        temp=None
 
 
     def print(self):

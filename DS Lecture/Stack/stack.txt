@@ -1,0 +1,5 @@
+Applications:
+recursion
+arithmetic expressions evaluattion use stack to evaluate the expressions
+Backtracking
+

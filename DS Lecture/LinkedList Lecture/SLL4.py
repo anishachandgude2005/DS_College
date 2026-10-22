@@ -35,6 +35,10 @@ class LinkedList:
                 temp=temp.next
                 p+=1
 
+            if temp is None:
+                print("Invalid Position")
+                return 
+
             new_node.next=temp.next
             temp.next=new_node
 

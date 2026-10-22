@@ -1,4 +1,4 @@
-#Singly Linear Linked List
+#Doubly Linear Linked List
 class Node:
     def __init__(self,val):
         self.data=val
@@ -43,6 +43,47 @@ class LinkedList:
             print(temp.data,end=" ")
             temp=temp.prev
 
+    def del_node(self,value):
+        temp=self.head
+        if temp.data==value:
+            self.head=self.head.next
+            self.head.prev=None
+
+        else: 
+            while(temp.data!=value and temp):
+                temp=temp.next
+                    
+                if temp==None:
+                    print("\nValue is not present")
+                    return
+            temp.prev.next=temp.next
+            if temp.next: #Not the last Node
+                temp.next.prev=temp.prev
+            temp=None
+
+    def occurance(self,num):
+        count=0
+        temp=self.head
+        while temp:
+            if temp.data==num:
+                count+=1
+            temp=temp.next
+        print("\nOccurance of", num ,"is" ,count )
+
+    def swap(self):
+        node1=self.head# node1 is first node
+        temp=self.head
+        while temp.next:#temp is last node
+            temp=temp.next
+        temp.next=node1.next
+        node1.next=None
+        node1.prev=temp.prev
+        temp.prev.next=node1
+        temp.prev=None
+        self.head=temp
+        
+
+
     def print(self):
         temp=self.head
         print("List Element:",end=" ")
@@ -55,7 +96,12 @@ list.append(Node(10))
 list.append(Node(20))
 list.append(Node(30))
 list.append(Node(40))
+list.append(Node(20))
 list.insert(Node(25),3)
 list.print()
-list.reverse()
+#list.reverse()
+list.del_node(50)
+list.print()
+list.occurance(10)
+list.swap()
 list.print()

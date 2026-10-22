@@ -17,7 +17,7 @@ class LinkedList:
             temp.next=new_node   #appending new node
     def print(self):
         temp=self.head
-        while temp.next :
+        while temp and temp.next :
             print(temp.data)
             temp=temp.next.next
         if temp:
