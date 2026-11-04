@@ -76,7 +76,7 @@ class LinkedList:
         while temp.next:#temp is last node
             temp=temp.next
         temp.next=node1.next
-        node1.next=None
+        node1.next=None 
         node1.prev=temp.prev
         temp.prev.next=node1
         temp.prev=None
